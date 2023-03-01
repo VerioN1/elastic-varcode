@@ -18,16 +18,16 @@ services:
     volumes:
       - type: bind
         source: ./setup/entrypoint.sh
-        target: /entrypoint.sh:ro,Z
+        target: /entrypoint.sh
       - type: bind
         source: ./setup/lib.sh
-        target: /lib.sh:ro,Z
+        target: /lib.sh
       - type: bind
         source: ./setup/roles
-        target: /roles:ro,Z
+        target: /roles
       - type: bind
-        source: setup
-        target: state:Z
+        source: ./setup
+        target: /state
     environment:
       ELASTIC_PASSWORD: ${ELASTIC_PASSWORD:-}
       LOGSTASH_INTERNAL_PASSWORD: ${LOGSTASH_INTERNAL_PASSWORD:-}
@@ -50,10 +50,10 @@ services:
     volumes:
       - type: bind
         source: ./elasticsearch/config/elasticsearch.yml
-        target: /usr/share/elasticsearch/config/elasticsearch.yml:ro,Z
+        target: /usr/share/elasticsearch/config/elasticsearch.yml
       - type: volume
         source: elasticsearch
-        target: /usr/share/elasticsearch/data:Z
+        target: /usr/share/elasticsearch/data
     ulimits:
       memlock:
         soft: -1
@@ -89,10 +89,10 @@ services:
     volumes:
       - type: bind
         source: ./logstash/config/logstash.yml
-        target: /usr/share/logstash/config/logstash.yml:ro,Z
+        target: /usr/share/logstash/config/logstash.yml
       - type: bind
         source: ./logstash/pipeline
-        target: /usr/share/logstash/pipeline:ro,Z
+        target: /usr/share/logstash/pipeline
     ports:
       - "5044:5044"
       - "50000:50000/tcp"
@@ -115,7 +115,7 @@ services:
     volumes:
       - type: bind
         source: ./kibana/config/kibana.yml
-        target: /usr/share/kibana/config/kibana.yml:ro,Z
+        target: /usr/share/kibana/config/kibana.yml
     ports:
       - "5601:5601"
     environment:
