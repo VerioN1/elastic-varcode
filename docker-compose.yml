@@ -16,10 +16,18 @@ services:
         ELASTIC_VERSION: ${ELASTIC_VERSION}
     init: true
     volumes:
-      - ./setup/entrypoint.sh:/entrypoint.sh:ro,Z
-      - ./setup/lib.sh:/lib.sh:ro,Z
-      - ./setup/roles:/roles:ro,Z
-      - setup:/state:Z
+      - type: bind
+        source: ./setup/entrypoint.sh
+        target: /entrypoint.sh:ro,Z
+      - type: bind
+        source: ./setup/lib.sh
+        target: /lib.sh:ro,Z
+      - type: bind
+        source: ./setup/roles
+        target: /roles:ro,Z
+      - type: bind
+        source: setup
+        target: state:Z
     environment:
       ELASTIC_PASSWORD: ${ELASTIC_PASSWORD:-}
       LOGSTASH_INTERNAL_PASSWORD: ${LOGSTASH_INTERNAL_PASSWORD:-}
@@ -43,7 +51,9 @@ services:
       - type: bind
         source: ./elasticsearch/config/elasticsearch.yml
         target: /usr/share/elasticsearch/config/elasticsearch.yml:ro,Z
-      - elasticsearch:/usr/share/elasticsearch/data:Z
+      - type: volume
+        source: elasticsearch
+        target: /usr/share/elasticsearch/data:Z
     ulimits:
       memlock:
         soft: -1
@@ -80,7 +90,9 @@ services:
       - type: bind
         source: ./logstash/config/logstash.yml
         target: /usr/share/logstash/config/logstash.yml:ro,Z
-      - ./logstash/pipeline:/usr/share/logstash/pipeline:ro,Z
+      - type: bind
+        source: ./logstash/pipeline
+        target: /usr/share/logstash/pipeline:ro,Z
     ports:
       - "5044:5044"
       - "50000:50000/tcp"
