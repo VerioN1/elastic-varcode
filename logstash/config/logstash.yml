@@ -1,7 +1,9 @@
 ---
-## Default Logstash configuration from Logstash base image.
-## https://github.com/elastic/logstash/blob/main/docker/data/logstash/config/logstash-full.yml
-#
-http.host: 0.0.0.0
+http.host: "0.0.0.0"
 
-node.name: logstash
+## X-Pack security credentials
+xpack.monitoring.elasticsearch.hosts: ${ELASTICSEARCH_HOST_PORT}
+xpack.monitoring.enabled: true
+xpack.monitoring.elasticsearch.username: ${ELASTIC_USERNAME}
+xpack.monitoring.elasticsearch.password: ${ELASTIC_PASSWORD}
+xpack.monitoring.elasticsearch.ssl.certificate_authority: /certs/ca.crt
