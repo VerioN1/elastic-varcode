@@ -29,6 +29,8 @@ services:
    environment:
      discovery.type: single-node
      ELASTIC_PASSWORD: password
+     KIBANA_SYSTEM_PASSWORD: password
+     LOGSTASH_INTERNAL_PASSWORD: password
 
   # Kibana. Gotta have a pretty UI, amiright?
  kibana_demo:
@@ -38,7 +40,8 @@ services:
    - ./elastic/kibana.yaml:/usr/share/kibana/config/kibana.yml
    ports:
      - 5601:5601
-
+   environment:
+     KIBANA_SYSTEM_PASSWORD: password
   # All hail the mighty, mighty LOOOOOOOGSTAAAAAAAAASH:
  logstash_demo:
    image: logstash:7.17.9
