@@ -42,9 +42,13 @@ services:
    ports:
      - 5601:5601
    environment:
+     SERVER_PUBLICBASEURL: http://apps-dev.varcode.com:5601
      ELASTIC_PASSWORD: password
      SERVER_NAME: apps-dev.varcode.com
      KIBANA_SYSTEM_PASSWORD: password
+
+
+
   # All hail the mighty, mighty LOOOOOOOGSTAAAAAAAAASH:
  logstash_demo:
    image: logstash:7.17.9
