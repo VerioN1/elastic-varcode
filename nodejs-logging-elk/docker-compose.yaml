@@ -1,20 +1,20 @@
 version: '3'
 services:
-  # NodeJS/ExpressJS server
- express_server:
-   container_name: expressjs
-   build:
-     context: ./
-     dockerfile: Dockerfile
-   volumes:
-   - './:/app'
-   - '/app/node_modules'
-   ports:
-     - 3000:3000
-     - 9229:9229
-   environment:
-     - NODE_ENV=dev
-   entrypoint: ["npm", "run", "dev"]
+#  # NodeJS/ExpressJS server
+# express_server:
+#   container_name: expressjs
+#   build:
+#     context: ./
+#     dockerfile: Dockerfile
+#   volumes:
+#   - './:/app'
+#   - '/app/node_modules'
+#   ports:
+#     - 3000:3000
+#     - 9229:9229
+#   environment:
+#     - NODE_ENV=dev
+#   entrypoint: ["npm", "run", "dev"]
 
   # Elasticsearch
  eslogs:
