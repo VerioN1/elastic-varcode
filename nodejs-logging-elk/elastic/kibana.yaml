@@ -4,7 +4,6 @@ elasticsearch:
 server:
   host: 0.0.0.0
   name: apps-dev.varcode
-  url: http://apps-dev.varcode.com:5601
 elasticsearch.username: "elastic"
 elasticsearch.password: "password"
 xpack.security.sameSiteCookies: "None"
