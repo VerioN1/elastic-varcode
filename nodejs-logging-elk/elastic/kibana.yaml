@@ -3,6 +3,15 @@ elasticsearch:
     - http://eslogs:9200
 server:
   host: 0.0.0.0
-  name: apps-dev.varcode
-elasticsearch.username: "elastic"
+  name: kibana
+xpack.fleet.packages:
+  - name: fleet_server
+    version: latest
+  - name: system
+    version: latest
+  - name: elastic_agent
+    version: latest
+  - name: apm
+    version: latest
+elasticsearch.username: "kibana_system"
 elasticsearch.password: "password"
