@@ -2,6 +2,7 @@ elasticsearch:
   hosts:
     - http://eslogs:9200
 server:
-  host: 0.0.0.0
+  host: apps-dev.varcode
+  publicBaseUrl: http://apps-dev.varcode.com:5601
 elasticsearch.username: "elastic"
 elasticsearch.password: "password"
