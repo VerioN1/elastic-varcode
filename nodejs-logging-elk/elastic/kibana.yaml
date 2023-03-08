@@ -3,6 +3,6 @@ elasticsearch:
     - http://eslogs:9200
 server:
   host: 0.0.0.0
-  name: kibana
+  name: apps-dev.varcode.com
 elasticsearch.username: "elastic"
 elasticsearch.password: "password"

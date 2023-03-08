@@ -31,7 +31,6 @@ services:
      KIBANA_SYSTEM_PASSWORD: password
      ELASTIC_PASSWORD: password
      node.name: eslogs
-     ES_JAVA_OPTS: -Xms512m -Xmx512m
      LOGSTASH_INTERNAL_PASSWORD: password
 
   # Kibana. Gotta have a pretty UI, amiright?
