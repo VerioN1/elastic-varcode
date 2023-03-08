@@ -4,14 +4,5 @@ elasticsearch:
 server:
   host: 0.0.0.0
   name: kibana
-xpack.fleet.packages:
-  - name: fleet_server
-    version: latest
-  - name: system
-    version: latest
-  - name: elastic_agent
-    version: latest
-  - name: apm
-    version: latest
-elasticsearch.username: "kibana_system"
+elasticsearch.username: "elastic"
 elasticsearch.password: "password"

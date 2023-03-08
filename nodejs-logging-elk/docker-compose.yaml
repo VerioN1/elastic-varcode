@@ -28,8 +28,10 @@ services:
      - 9300:9300
    environment:
      discovery.type: single-node
-     ELASTIC_PASSWORD: password
      KIBANA_SYSTEM_PASSWORD: password
+     ELASTIC_PASSWORD: password
+     node.name: eslogs
+     ES_JAVA_OPTS: -Xms512m -Xmx512m
      LOGSTASH_INTERNAL_PASSWORD: password
 
   # Kibana. Gotta have a pretty UI, amiright?
@@ -41,6 +43,8 @@ services:
    ports:
      - 5601:5601
    environment:
+     ELASTIC_PASSWORD: password
+     SERVER_NAME: apps-dev.varcode.com
      KIBANA_SYSTEM_PASSWORD: password
   # All hail the mighty, mighty LOOOOOOOGSTAAAAAAAAASH:
  logstash_demo:
