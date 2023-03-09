@@ -11,10 +11,8 @@ services:
      - 9300:9300
    environment:
      discovery.type: single-node
-     KIBANA_SYSTEM_PASSWORD: password
      ELASTIC_PASSWORD: password
      node.name: eslogs
-     LOGSTASH_INTERNAL_PASSWORD: password
 
   # Kibana. Gotta have a pretty UI, amiright?
  kibana_demo:
@@ -26,10 +24,7 @@ services:
      - 5601:5601
    environment:
      SERVER_PUBLICBASEURL: http://apps-dev.varcode.com:5601
-     ELASTIC_PASSWORD: password
      SERVER_NAME: apps-dev.varcode.com
-     KIBANA_SYSTEM_PASSWORD: password
-
 
 
   # All hail the mighty, mighty LOOOOOOOGSTAAAAAAAAASH:
@@ -45,7 +40,6 @@ services:
    - 1515:1515/udp
    environment:
      LS_JAVA_OPTS: -Xms256m -Xmx256m
-     LOGSTASH_INTERNAL_PASSWORD: password
 
 volumes:
   elasticsearch_data:

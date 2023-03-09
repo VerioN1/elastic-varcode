@@ -1,8 +1,0 @@
-cluster.name: "docker-cluster"
-network.host: 0.0.0.0
-discovery.type: single-node
-#xpack.license.self_generated.type: trial
-## The API key service is required by Fleet, but disabled by default when the
-## Elasticsearch API is not served over TLS.
-#xpack.security.authc.api_key.enabled: true
-xpack.security.enabled: true
