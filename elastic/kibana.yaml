@@ -1,0 +1,17 @@
+elasticsearch:
+  hosts:
+    - http://eslogs:9200
+server:
+  host: 0.0.0.0
+  name: apps-dev.varcode.com
+
+#server.ssl.enabled: false
+#
+#elasticsearch.username: "kibana_system"
+#elasticsearch.password: "password"
+#xpack:
+#  security:
+#    encryptionKey: "oEndd3sWqC12nECkb835cR0haz7PRs2C"
+#    session:
+#      idleTimeout: "7h"
+#      lifespan: "30d"
