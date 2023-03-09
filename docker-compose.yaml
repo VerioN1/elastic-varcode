@@ -35,7 +35,7 @@ services:
    - ./elastic/logging.conf:/usr/share/logstash/pipeline/logging.conf
    - ./elastic/logstash.yaml:/usr/share/logstash/config/logstash.yml
    ports:
-     - "5044:5044"
+     - "5042:5042"
      - "50000:50000/tcp"
      - "50000:50000/udp"
      - "9600:9600"
