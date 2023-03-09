@@ -35,9 +35,10 @@ services:
    - ./elastic/logging.conf:/usr/share/logstash/pipeline/logging.conf
    - ./elastic/logstash.yaml:/usr/share/logstash/config/logstash.yml
    ports:
-   - 1514:1514/udp
-   - 1515:1515
-   - 1515:1515/udp
+     - "5044:5044"
+     - "50000:50000/tcp"
+     - "50000:50000/udp"
+     - "9600:9600"
    environment:
      LS_JAVA_OPTS: -Xms256m -Xmx256m
 
