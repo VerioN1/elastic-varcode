@@ -1,0 +1,25 @@
+apm-server:
+  # Defines the host and port the server is listening on. Use "unix:/path/to.sock" to listen on a unix domain socket.
+  host: "0.0.0.0:8200"
+
+
+  #---------------------------- APM Server - Secure Communication with Agents ----------------------------
+
+  # Enable authentication using Secret token
+  auth:
+    secret_token: "g7aaEKvYUtyL5rZ8sGHHmfybmTiXgo8x"
+
+output.elasticsearch:
+  # Array of hosts to connect to.
+  # Scheme and port can be left out and will be set to the default (`http` and `9200`).
+  # In case you specify and additional path, the scheme is required: `http://elasticsearch:9200/path`.
+  # IPv6 addresses should always be defined as: `https://[2001:db8::1]:9200`.
+  hosts: 'http://eslogs:9200'
+
+  # Boolean flag to enable or disable the output module.
+  enabled: true
+
+  # Protocol - either `http` (default) or `https`.
+  # Authentication credentials
+  username: "elastic"
+  password: "password"
