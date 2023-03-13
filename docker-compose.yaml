@@ -44,7 +44,10 @@ services:
 
  apm-server:
     image: docker.elastic.co/apm/apm-server:7.17.9
+    container_name: apm-server
     restart: unless-stopped
+    command:
+      - "--strict.perms=false"
     ports:
       - "8200:8200"
     volumes:
