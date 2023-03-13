@@ -40,6 +40,7 @@ services:
      - "50000:50000/udp"
      - "9600:9600"
    environment:
+     LOGSTASH_INTERNAL_SCANNER_2: "2-CAMERA"
      LS_JAVA_OPTS: -Xms256m -Xmx256m
 
  apm-server:
