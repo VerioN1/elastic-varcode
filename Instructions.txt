@@ -1,0 +1,10 @@
+this docker repo initiate the ECK stack, inorder to use it, we need to confirm the password of the root user (userName:elastic) on all users so we can access it.
+this is not a stack for production purposes - only develop.
+
+
+
+1. after the stack is up and all the containers are runnning - connect to the ElasticSearch container with BASH.
+2.run the following command: **bin/elasticsearch-setup-passwords interactive**
+3.on each prompt type the password configured to elastic user (default is "password")
+4. restart the kibana and logstash containers.
+5. connect to the kibana with elastic user and password "password"
